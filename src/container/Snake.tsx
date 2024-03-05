@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../styles/Snake.css';
 
 const numRows = 20;
 const numCols = 20;
@@ -108,6 +109,13 @@ export default function SnakeGame() {
         return [x, y];
     }
 
+    function  RestartGame() {
+        setSnake(initialSnake);
+        setFood(generateFoodPosition());
+        setDirection(directions.RIGHT);
+        setGameOver(false);
+    }
+
     return (
         <div>
             <h1>Snake Game</h1>
@@ -130,7 +138,7 @@ export default function SnakeGame() {
                     ))
                 )}
             </div>
-            {gameOver && <h2>Game Over!</h2>}
+            {gameOver && <h2 className="restart-button" onClick={RestartGame}>Game Over! Press to restart</h2>}
         </div>
     );
 }
