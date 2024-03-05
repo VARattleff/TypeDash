@@ -1,7 +1,9 @@
 import  { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaRegKeyboard } from "react-icons/fa";
+import { FaHome, FaRegKeyboard, FaRandom } from "react-icons/fa";
 import { GiTicTacToe, GiSandSnake } from "react-icons/gi";
+import { IoIosText, IoMdCode } from "react-icons/io";
+
 
 const NavHeader = () => {
     const [showSubmenu, setShowSubmenu] = useState(false);
@@ -18,13 +20,13 @@ const NavHeader = () => {
                         {showSubmenu && (
                             <ul className="submenu">
                                 <li className="submenu-item">
-                                    <Link to="/TypeDashWords" className="link">Typing test Random Words</Link>
+                                    <Link to="/TypeDashWords" className="link"><FaRandom className="icon"/></Link>
                                 </li>
                                 <li className="submenu-item">
-                                    <Link to="/TypeDashSentence" className="link">Typing Test Sentences</Link>
+                                    <Link to="/TypeDashSentence" className="link"><IoIosText className="icon" /></Link>
                                 </li>
                                 <li className="submenu-item">
-                                    <Link to="/TypeDashCode" className="link">Typing test Code</Link>
+                                    <Link to="/TypeDashCode" className="link"><IoMdCode className="icon"/></Link>
                                 </li>
                             </ul>
                         )}
