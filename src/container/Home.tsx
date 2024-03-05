@@ -1,16 +1,10 @@
-const HomeHeader = () => {
-
-    return (
-        <>
-            <h1>Home</h1>
-        </>
-    );
-}
 
 const Home = () => {
     return (
         <>
-            <HomeHeader />
+            <h1>Welcome to TyperDash</h1>
+            <p>Improve your typing speed and accuracy with TyperDash</p>
+
         </>
     );
 }

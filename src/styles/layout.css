@@ -10,7 +10,7 @@
     background-color: #333;
     color: #fff;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tilføjet en svag skygge for dybde */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav {
@@ -38,4 +38,27 @@
 .link:hover,
 .link.active {
     color: #ff79c6;;
+}
+
+.submenu {
+    background-color: #333;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1;
+    text-align: left;
+    list-style-type: none;
+}
+
+.submenu-item {
+    padding: 0.5rem 1rem;
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+
+.icon {
+    font-size: 24px;
 }
