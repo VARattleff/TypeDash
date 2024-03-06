@@ -20,8 +20,7 @@ const TicTacToe = () => {
         </div>
     );
 
-
-    const toggle = (num: any) => {
+    const toggle = (num:any) => {
         if (data[num] !== null || winner) {
             return;
         }
@@ -32,6 +31,9 @@ const TicTacToe = () => {
         setCount(count + 1);
         if (checkWin(updatedData)) {
             setWinner(updatedData[num]);
+        } else if (count === 8) {
+            // @ts-ignore
+            setWinner("draw");
         }
     };
 
@@ -62,16 +64,19 @@ const TicTacToe = () => {
         // @ts-ignore
         titleRef.current.innerHTML = 'Tic Tac Toe';
         setCount(0);
+        // @ts-ignore
         setWinner(null);
     };
 
     const renderWinnerMessage = () => {
-        if (winner) {
+        if (winner === "cross" || winner === "circle") {
             return (
                 <h1 className="winner-message">
                     Winner: {winner === "cross" ? <CrossIcon /> : <CircleIcon />}
                 </h1>
             );
+        } else if (winner === "draw") {
+            return <h1 className="winner-message">It's a draw!</h1>;
         }
         return null;
     };
@@ -79,26 +84,26 @@ const TicTacToe = () => {
     return (
         <div className='container'>
             <h1 className="title" ref={titleRef}>Tic Tac Toe</h1>
-            <div className="board">
-                {renderWinnerMessage()}
-                <img src="" alt="" />
-                <div className="row1">
-                    {renderBox(0)}
-                    {renderBox(1)}
-                    {renderBox(2)}
+            {winner || count === 9 ? renderWinnerMessage() : (
+                <div className="board">
+                    <div className="row1">
+                        {renderBox(0)}
+                        {renderBox(1)}
+                        {renderBox(2)}
+                    </div>
+                    <div className="row2">
+                        {renderBox(3)}
+                        {renderBox(4)}
+                        {renderBox(5)}
+                    </div>
+                    <div className="row3">
+                        {renderBox(6)}
+                        {renderBox(7)}
+                        {renderBox(8)}
+                    </div>
                 </div>
-                <div className="row2">
-                    {renderBox(3)}
-                    {renderBox(4)}
-                    {renderBox(5)}
-                </div>
-                <div className="row3">
-                    {renderBox(6)}
-                    {renderBox(7)}
-                    {renderBox(8)}
-                </div>
-            </div>
-            <button className="reset" onClick={() => reset()}>Reset</button>
+            )}
+            <button className="reset" onClick={reset}>Reset</button>
         </div>
     );
 
