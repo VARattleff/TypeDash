@@ -1,0 +1,9 @@
+.icon-home-page{
+    font: 400 20px/1 'Roboto', sans-serif;
+    color: black;
+    font-size: 55px;
+}
+
+.icon-home-page:hover, .icon-home-page.active{
+    color: #ff79c6;
+}
