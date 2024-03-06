@@ -48,10 +48,18 @@ const code:string[] = [
     "const FallbackPage: React.FC = () => {return <>...</>};",
 ]
 
-function getCloudWord():string[] {
+function getCloudWord(): string[] {
     const mixedWords = getRandomWords(20).sort(() => Math.random() > 0.5 ? 1 : -1);
-    return mixedWords.slice(0, Math.floor(Math.random() * mixedWords.length));
+    const cloudWords = mixedWords.slice(0, Math.floor(Math.random() * mixedWords.length));
+
+    if (cloudWords.length < 6) {
+        const additionalWords = getRandomWords(20).sort(() => Math.random() > 0.5 ? 1 : -1);
+        return cloudWords.concat(additionalWords.slice(0, 6 - cloudWords.length));
+    }
+
+    return cloudWords;
 }
+
 
 function getCloudSentence(): string[] {
     const randomIndex = Math.floor(Math.random() * Sentence.length);
