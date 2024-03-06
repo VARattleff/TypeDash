@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../styles/Snake.css';
+import { FaSadCry } from "react-icons/fa";
 
 const numRows = 20;
 const numCols = 20;
@@ -116,6 +117,21 @@ export default function SnakeGame() {
         setGameOver(false);
     }
 
+    useEffect(() => {
+        function handleKeyPress(event:any) {
+            if (event.key === 'Enter') {
+                RestartGame();
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyPress);
+        };
+    }, []);
+
+
     return (
         <div>
             <h1>Snake Game</h1>
@@ -138,7 +154,8 @@ export default function SnakeGame() {
                     ))
                 )}
             </div>
-            {gameOver && <h2 className="restart-button" onClick={RestartGame}>Game Over! Press to restart</h2>}
+            {gameOver && <h2 className="restart-button" onClick={RestartGame} >Game Over!<FaSadCry /> </h2>}
+            {gameOver && <h2 className="">Press enter to restart </h2>}
         </div>
     );
 }
