@@ -6,7 +6,7 @@
     padding: 10px;
     z-index: 1;
     color: black;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(3px);
     text-align: center;
 }
 
@@ -14,3 +14,17 @@
 .restart-button.active {
     color: #ff79c6;;
 }
+.press-enter{
+    font-size: 29px;
+    position: absolute;
+    margin: auto;
+    top: 60%;
+    padding: 10px;
+    z-index: 1;
+    color: black;
+    text-align: center;
+    backdrop-filter: blur(3px);
+}
+
+
+

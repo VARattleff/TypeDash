@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 import '../styles/Snake.css';
 import { FaSadCry } from "react-icons/fa";
 
@@ -154,8 +154,16 @@ export default function SnakeGame() {
                     ))
                 )}
             </div>
-            {gameOver && <h2 className="restart-button" onClick={RestartGame} >Game Over!<FaSadCry /> </h2>}
-            {gameOver && <h2 className="">Press enter to restart </h2>}
+            {gameOver &&
+            <>
+                <span className='blur'>
+
+                 <h2 className="restart-button" onClick={RestartGame} >Game Over!<FaSadCry /> </h2>
+                <h2 className="press-enter">Press enter to restart </h2>
+                </span>
+
+            </>
+            }
         </div>
     );
 }
