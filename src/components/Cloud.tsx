@@ -37,15 +37,23 @@ const Sentence:string[] = [
     "Jeg siger bare, at man skal være glad for vejret, så længe man kan trække det",
     "Livet er svært, men css er sværere",
     "Har man ikke andre glæder her i livet, så har man dog selvglæden",
-    "Kunst er det, man ikke kan. Hvis man kunne, var det jo ingen kunst"
+    "Kunst er det, man ikke kan. Hvis man kunne, var det jo ingen kunst",
+    "Livet er herligt – men intet er dog som et stort velskænket glas øl",
+    "Modvind er en god ting – når man skal den anden vej",
+    "Kultur, er det ikke noget, man pudser møbler med",
+    "En lille mand kan kaste stor skygge",
+    "Man skal aldrig glæde sig før dagen efter",
+    "Intet kommer af ingenting – bortset fra lommeuld"
 ]
 
 
 const code:string[] = [
-    "const res = words.map(word => word.length);",
-    "const mixedWords = getRandomWords(20).sort(() => Math.random() > 0.5 ? 1 : -1);",
-    "const { correctWords, startCounting, setTimeElapsed, timeElapsed } = props;",
-    "const FallbackPage: React.FC = () => {return <>...</>};",
+    "const inputs = Matrix.fromArray(inputArray);",
+    "return this.data.map((row, i) => row.map((_, j) => func(this.data[i][j], i, j)));",
+    "while (this.hash.substring(0, difficulty) !== Array(difficulty + 1).join('0'))",
+    ".map(GrantedAuthority::getAuthority)",
+    "func (tm *TaskManager) GetTasks() []Task",
+
 ]
 
 function getCloudWord(): string[] {
