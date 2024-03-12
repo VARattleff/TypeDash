@@ -38,12 +38,8 @@ const Sentence:string[] = [
     "Livet er svært, men css er sværere",
     "Har man ikke andre glæder her i livet, så har man dog selvglæden",
     "Kunst er det, man ikke kan. Hvis man kunne, var det jo ingen kunst",
-    "Livet er herligt – men intet er dog som et stort velskænket glas øl",
-    "Modvind er en god ting – når man skal den anden vej",
-    "Kultur, er det ikke noget, man pudser møbler med",
     "En lille mand kan kaste stor skygge",
     "Man skal aldrig glæde sig før dagen efter",
-    "Intet kommer af ingenting – bortset fra lommeuld"
 ]
 
 
